@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/background.gif');
+    background-image: cover;
+    height: 1000px;
+}
+
+button {
+    margin-top: 10px;
+    width: 120px;
+    height: 65px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #7FFFD4;
+    font-family: 'Kirang Haerang', cursive;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    font-color: black;
+}
+
+button:hover {
+    background-color: #00FFFF;
+}
+
+.grid {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    margin: 5px;
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 150px;
+    width: 150px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.selected {
+    border: 4px solid #F0E68C;
+}
+
+.match {
+    border: 4px solid #6A5ACD;
+    background-image: none !important;
+}
