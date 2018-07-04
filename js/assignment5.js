@@ -1,4 +1,8 @@
+start();
+function start() {
+console.log("start");
 // Card data
+
 const cardsArray = [{
     'name': 'chik',
     'img': './img/chik.jpg',
@@ -26,6 +30,7 @@ grid.setAttribute('class', 'grid');
 // Append the grid section to the game div
 game.appendChild(grid);
 let gameGrid = cardsArray.concat(cardsArray);
+
 // Randomize game grid on each load
 gameGrid.sort(() => 0.5 - Math.random());
 // For each item in the cardsArray array...
@@ -71,12 +76,18 @@ grid.addEventListener('click', function(event) {
         count++;
         if (count === 1) {
             // Assign first guess
-            firstGuess = clicked.dataset.name;
-            clicked.classList.add('selected');
+            //firstGuess = clicked.dataset.name;
+            firstGuess = clicked.parentNode.dataset.name;
+            console.log(firstGuess);
+             clicked.parentNode.classList.add('selected');
+           // clicked.classList.add('selected');
         } else {
             // Assign second guess
-            secondGuess = clicked.dataset.name;
-            clicked.classList.add('selected');
+            secondGuess = clicked.parentNode.dataset.name;
+            console.log(secondGuess);
+            clicked.parentNode.classList.add('selected');
+            //secondGuess = clicked.dataset.name;
+           // clicked.classList.add('selected');
         }
         // If both guesses are not empty...
         if (firstGuess !== '' && secondGuess !== '') {
@@ -110,3 +121,10 @@ function resetGuesses() {
         selected[i].classList.remove('selected');
     }
 };
+
+};
+
+
+function newGame() {
+  location.reload();
+}
