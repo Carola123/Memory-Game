@@ -38,6 +38,9 @@ button:hover {
 }
 
 .card {
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
     margin: 5px;
     background-color: white;
     background-size: contain;
@@ -47,6 +50,10 @@ button:hover {
     width: 150px;
     border-radius: 7px;
     cursor: pointer;
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+  
 }
 
 .selected {
@@ -56,4 +63,38 @@ button:hover {
 .match {
     border: 4px solid #6A5ACD;
     background-image: none !important;
+    visibility: hidden;
+}
+
+.card,
+.back,
+.front {
+    height: 150px;
+    width: 150px;
+}
+
+.back,
+.front {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    background: #FAB942 url('../img/question.jpg') no-repeat center center / contain;
+}
+
+.back {
+    transform: rotateY(180deg);
+  
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.selected {
+    transform: rotateY(180deg);
+}
+
+.match .front {
+    background: white !important;
 }
